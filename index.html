@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>SocialX</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="/css/app.css" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- ═══════════════ AUTH ═══════════════ -->
+<div id="auth-section">
+
+  <!-- LOGIN -->
+  <div id="page-login" class="auth-page active-page">
+    <div class="auth-bg">
+      <div class="auth-card">
+        <div class="brand mb-1">Social<em>X</em></div>
+        <p class="brand-sub">Connect · Share · Discover</p>
+        <div class="mb-3">
+          <label class="auth-label">Email</label>
+          <div class="input-group">
+            <span class="input-group-text aig"><i class="bi bi-envelope"></i></span>
+            <input id="li-email" type="email" class="form-control afi" placeholder="you@example.com"/>
+          </div>
+          <div class="err-msg" id="li-email-err"></div>
+        </div>
+        <div class="mb-3">
+          <div class="d-flex justify-content-between mb-1">
+            <label class="auth-label mb-0">Password</label>
+            <a href="#" class="tlink small" id="go-forgot">Forgot password?</a>
+          </div>
+          <div class="input-group">
+            <span class="input-group-text aig"><i class="bi bi-lock"></i></span>
+            <input id="li-pass" type="password" class="form-control afi" placeholder="••••••••"/>
+          </div>
+          <div class="err-msg" id="li-pass-err"></div>
+        </div>
+        <div class="err-msg text-center mb-2" id="li-err"></div>
+        <button class="btn btn-accent w-100" id="li-btn">
+          <span class="btxt">Sign In</span><span class="bspin spinner-border spinner-border-sm d-none"></span>
+        </button>
+        <div class="auth-div"><span>or</span></div>
+        <p class="text-center small text-muted">No account? <a href="#" class="tlink fw-semibold" id="go-register">Create one free</a></p>
+        <div class="demo-box">
+          <strong class="text-accent">Demo accounts</strong> — password: <strong>password123</strong><br/>
+          alice@demo.com &nbsp;·&nbsp; bob@demo.com &nbsp;·&nbsp; carol@demo.com
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REGISTER -->
+  <div id="page-register" class="auth-page">
+    <div class="auth-bg">
+      <div class="auth-card">
+        <div class="brand mb-1">Social<em>X</em></div>
+        <p class="brand-sub">Join the conversation today</p>
+        <div class="mb-3">
+          <label class="auth-label">Full Name</label>
+          <div class="input-group">
+            <span class="input-group-text aig"><i class="bi bi-person"></i></span>
+            <input id="rg-name" type="text" class="form-control afi" placeholder="John Doe"/>
+          </div>
+          <div class="err-msg" id="rg-name-err"></div>
+        </div>
+        <div class="mb-3">
+          <label class="auth-label">Username</label>
+          <div class="input-group">
+            <span class="input-group-text aig">@</span>
+            <input id="rg-user" type="text" class="form-control afi" placeholder="johndoe"/>
+          </div>
+          <div class="err-msg" id="rg-user-err"></div>
+        </div>
+        <div class="mb-3">
+          <label class="auth-label">Email</label>
+          <div class="input-group">
+            <span class="input-group-text aig"><i class="bi bi-envelope"></i></span>
+            <input id="rg-email" type="email" class="form-control afi" placeholder="you@example.com"/>
+          </div>
+          <div class="err-msg" id="rg-email-err"></div>
+        </div>
+        <div class="mb-3">
+          <label class="auth-label">Password <small class="text-muted">(min 6 chars)</small></label>
+          <div class="input-group">
+            <span class="input-group-text aig"><i class="bi bi-lock"></i></span>
+            <input id="rg-pass" type="password" class="form-control afi" placeholder="Min 6 characters"/>
+          </div>
+          <div class="sbar-wrap mt-1"><div id="sbar"></div></div>
+          <div class="err-msg" id="rg-pass-err"></div>
+        </div>
+        <div class="err-msg text-center mb-2" id="rg-err"></div>
+        <button class="btn btn-accent w-100" id="rg-btn">
+          <span class="btxt">Create Account</span><span class="bspin spinner-border spinner-border-sm d-none"></span>
+        </button>
+        <div class="auth-div"><span>or</span></div>
+        <p class="text-center small text-muted">Have an account? <a href="#" class="tlink fw-semibold" id="go-login">Sign in</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FORGOT PASSWORD -->
+  <div id="page-forgot" class="auth-page">
+    <div class="auth-bg">
+      <div class="auth-card">
+        <div class="brand mb-1">Social<em>X</em></div>
+        <div id="fp-s1" class="fp-step active-step">
+          <p class="brand-sub">Enter your email to get a reset token</p>
+          <div class="mb-3">
+            <label class="auth-label">Email</label>
+            <div class="input-group">
+              <span class="input-group-text aig"><i class="bi bi-envelope"></i></span>
+              <input id="fp-email" type="email" class="form-control afi" placeholder="you@example.com"/>
+            </div>
+            <div class="err-msg" id="fp-email-err"></div>
+          </div>
+          <button class="btn btn-accent w-100" id="fp-btn1">
+            <span class="btxt">Get Reset Token</span><span class="bspin spinner-border spinner-border-sm d-none"></span>
+          </button>
+        </div>
+        <div id="fp-s2" class="fp-step">
+          <p class="brand-sub">Enter the token and set a new password</p>
+          <div class="token-box mb-3" id="fp-tok-box">
+            <div class="small text-muted mb-1">🔑 Your token (click to copy):</div>
+            <div class="token-val" id="fp-tok-val"></div>
+          </div>
+          <div class="mb-3">
+            <label class="auth-label">Reset Token</label>
+            <input id="fp-tok" type="text" class="form-control afi" placeholder="Paste token"/>
+            <div class="err-msg" id="fp-tok-err"></div>
+          </div>
+          <div class="mb-3">
+            <label class="auth-label">New Password</label>
+            <div class="input-group">
+              <span class="input-group-text aig"><i class="bi bi-lock"></i></span>
+              <input id="fp-np" type="password" class="form-control afi" placeholder="Min 6 characters"/>
+            </div>
+            <div class="err-msg" id="fp-np-err"></div>
+          </div>
+          <div class="err-msg text-center mb-2" id="fp-err"></div>
+          <button class="btn btn-accent w-100" id="fp-btn2">
+            <span class="btxt">Reset Password</span><span class="bspin spinner-border spinner-border-sm d-none"></span>
+          </button>
+        </div>
+        <div id="fp-s3" class="fp-step text-center py-2">
+          <div style="font-size:56px">✅</div>
+          <h5 class="mt-3 fw-bold">Password Reset!</h5>
+          <p class="small text-muted mb-4">Your password has been updated.</p>
+          <button class="btn btn-accent w-100" id="fp-btn3">Back to Login</button>
+        </div>
+        <div class="text-center mt-3">
+          <a href="#" class="tlink small" id="fp-back">← Back to Login</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════ APP ═══════════════ -->
+<div id="app-section" class="d-none">
+  <nav class="sidebar">
+    <div class="sb-brand">Social<em>X</em></div>
+    <button class="nb active" data-tab="feed"><i class="bi bi-house-fill"></i><span>Feed</span></button>
+    <button class="nb" data-tab="profile"><i class="bi bi-person-circle"></i><span>Profile</span></button>
+    <hr class="sb-sep"/>
+    <button class="nb nb-compose" id="nav-compose"><i class="bi bi-plus-lg"></i><span>New Post</span></button>
+    <div class="sb-foot">
+      <div class="sb-user-card">
+        <img id="sb-av" class="sb-av" src="" alt=""/>
+        <div class="overflow-hidden">
+          <div class="sb-fname text-truncate" id="sb-name"></div>
+          <div class="sb-uname text-truncate" id="sb-handle"></div>
+        </div>
+      </div>
+      <button class="nb mt-1" id="nav-logout"><i class="bi bi-box-arrow-right"></i><span>Logout</span></button>
+    </div>
+  </nav>
+
+  <div class="app-main">
+    <!-- FEED -->
+    <div id="tab-feed" class="center-col tab active-tab">
+      <div class="topbar">
+        <div class="fw-bold" style="font-family:'Syne',sans-serif;font-size:18px">Feed</div>
+        <div class="small text-muted mt-1">What's happening right now</div>
+      </div>
+      <div class="compose-wrap">
+        <img id="compose-av" class="pav pav-md" src="" alt=""/>
+        <div class="flex-grow-1">
+          <textarea id="compose-ta" class="compose-ta" rows="2"
+            placeholder="What's on your mind? Add a photo or video! (Ctrl+Enter to post)" maxlength="500"></textarea>
+          <div id="cprev" class="cprev d-none">
+            <img id="cprev-img" class="d-none"/>
+            <video id="cprev-vid" controls class="d-none"></video>
+            <button class="cprev-rm" id="rm-media"><i class="bi bi-x-lg"></i></button>
+            <span class="cprev-badge" id="cprev-badge"></span>
+          </div>
+          <div id="drop-zone" class="drop-zone">
+            <i class="bi bi-paperclip fs-4 d-block mb-1"></i>
+            Drag & drop a photo or video, or <strong class="text-accent">click to browse</strong>
+          </div>
+          <input type="file" id="img-inp" accept="image/*" class="d-none"/>
+          <input type="file" id="vid-inp" accept="video/*" class="d-none"/>
+          <div class="compose-foot">
+            <div class="d-flex gap-2">
+              <button class="mbtn" id="photo-btn"><i class="bi bi-image"></i> Photo</button>
+              <button class="mbtn" id="video-btn"><i class="bi bi-camera-video"></i> Video</button>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <small class="text-muted" id="cc">0 / 500</small>
+              <button class="btn btn-accent btn-sm px-3" id="post-btn">Post</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="feed-list"></div>
+      <div id="feed-spin" class="text-center py-4 d-none"><div class="spinner-border spinner-border-sm text-accent"></div></div>
+      <div id="load-more-wrap" class="text-center py-3 d-none">
+        <button class="btn btn-outline-secondary btn-sm px-4" id="load-more-btn">Load more</button>
+      </div>
+    </div>
+
+    <!-- PROFILE -->
+    <div id="tab-profile" class="center-col tab">
+      <div class="prof-banner"></div>
+      <div class="prof-info">
+        <div class="d-flex justify-content-between align-items-end mb-3" style="margin-top:-50px">
+          <img id="prof-av" class="prof-av" src="" alt=""/>
+          <button class="btn btn-sm btn-outline-secondary" id="edit-prof-btn">
+            <i class="bi bi-pencil me-1"></i>Edit Profile
+          </button>
+        </div>
+        <div class="prof-name" id="prof-name"></div>
+        <div class="prof-handle" id="prof-handle"></div>
+        <div class="prof-bio" id="prof-bio"></div>
+        <div class="prof-stats">
+          <div><span class="stat-val" id="ps-posts">0</span><span class="stat-lbl">Posts</span></div>
+          <div><span class="stat-val" id="ps-likes">0</span><span class="stat-lbl">Likes</span></div>
+          <div><span class="stat-val" id="ps-views">0</span><span class="stat-lbl">Views</span></div>
+          <div><span class="stat-val" id="ps-comments">0</span><span class="stat-lbl">Comments</span></div>
+        </div>
+      </div>
+      <div class="topbar" style="position:relative;top:auto">
+        <div class="fw-bold" style="font-family:'Syne',sans-serif">My Posts</div>
+      </div>
+      <div id="prof-posts"></div>
+    </div>
+
+    <!-- RIGHT COL -->
+    <div class="right-col">
+      <div class="widget">
+        <div class="wt">Your Stats</div>
+        <div class="wr"><span>Posts</span><strong id="ws-posts">—</strong></div>
+        <div class="wr"><span>Likes received</span><strong id="ws-likes">—</strong></div>
+        <div class="wr"><span>Total views</span><strong id="ws-views">—</strong></div>
+        <div class="wr"><span>Comments</span><strong id="ws-comments">—</strong></div>
+      </div>
+      <div class="widget">
+        <div class="wt">Members</div>
+        <div id="members-list"></div>
+      </div>
+      <div class="widget">
+        <div class="wt">Media Guide</div>
+        <div class="small text-muted lh-lg">
+          📷 <strong>Photos</strong> — JPG · PNG · GIF · WebP<br/>
+          🎬 <strong>Videos</strong> — MP4 · WebM · MOV<br/>
+          <span class="text-accent">Click photos</span> to view full size.<br/>
+          <span class="text-accent">Drag & drop</span> into compose.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODALS -->
+<div class="modal fade" id="postModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-content app-modal">
+      <div class="modal-header border-0 pb-0">
+        <div class="d-flex align-items-center gap-2">
+          <img id="pm-av" class="pav pav-sm" src="" alt=""/>
+          <div><div class="fw-bold" id="pm-name"></div><div class="small text-muted" id="pm-meta"></div></div>
+        </div>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body pt-2" id="pm-body"></div>
+      <div class="modal-footer border-0 pt-0 gap-2">
+        <img id="pm-me-av" class="pav pav-sm" src="" alt=""/>
+        <div class="flex-grow-1">
+          <div id="reply-hint" class="reply-hint d-none">
+            <span id="rh-txt"></span>
+            <button class="btn btn-xs btn-ghost" id="cancel-reply">Cancel</button>
+          </div>
+          <div class="d-flex gap-2">
+            <textarea id="comment-ta" class="comment-ta" rows="1" placeholder="Write a comment… (Enter to send)"></textarea>
+            <button class="btn btn-accent btn-sm align-self-end" id="send-comment-btn">
+              <i class="bi bi-send-fill"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="editPostModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content app-modal">
+      <div class="modal-header border-0">
+        <h6 class="modal-title fw-bold">Edit Post</h6>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <textarea id="edit-ta" class="form-control app-ta" rows="4" maxlength="500"></textarea>
+        <input type="hidden" id="edit-pid"/>
+      </div>
+      <div class="modal-footer border-0">
+        <button class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+        <button class="btn btn-accent btn-sm" id="edit-save-btn">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="editProfileModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content app-modal">
+      <div class="modal-header border-0">
+        <h6 class="modal-title fw-bold">Edit Profile</h6>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center mb-3">
+          <img id="ep-av" class="pav" style="width:80px;height:80px;border:3px solid var(--border2)" src="" alt=""/>
+          <div class="mt-2">
+            <label class="btn btn-outline-secondary btn-sm" for="av-inp">
+              <i class="bi bi-camera me-1"></i>Change Photo
+            </label>
+            <input type="file" id="av-inp" accept="image/*" class="d-none"/>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label class="auth-label">Full Name</label>
+          <input id="ep-name" type="text" class="form-control afi"/>
+        </div>
+        <div class="mb-3">
+          <label class="auth-label">Bio</label>
+          <textarea id="ep-bio" class="form-control afi" rows="3" placeholder="Tell people about yourself…"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+        <button class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Cancel</button>
+        <button class="btn btn-accent btn-sm" id="ep-save-btn">Save Profile</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="lightbox" class="lightbox d-none">
+  <button id="lb-close" class="lb-close"><i class="bi bi-x-lg"></i></button>
+  <img id="lb-img" src="" alt=""/>
+</div>
+
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index:9999">
+  <div id="toast" class="toast border-0" role="alert">
+    <div class="d-flex">
+      <div class="toast-body fw-semibold" id="toast-msg"></div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/api.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>
